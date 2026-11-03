@@ -1,8 +1,9 @@
 'use client';
 
-import { useMemo, useState, useRef } from 'react';
+import { useMemo, useState, useRef, type MouseEvent } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useCart } from '@/components/cart/CartContext';
 import { mediaUrl } from '@/lib/api';
 import type { ProductDetailResponse } from '@/lib/types';
@@ -12,7 +13,19 @@ function comboKey(size: string | null, color: string | null) {
 }
 
 export function ProductDetailClient({ product }: { product: ProductDetailResponse }) {
+  const router = useRouter();
   const { addItem, isMutating } = useCart();
+
+  // document.referrer never updates on Next.js's client-side route transitions (it's a browser-level
+  // value fixed at the session's first real page load), so checking it here to decide whether we came
+  // from the products list silently failed almost every time, always falling back to the unfiltered
+  // href below and dropping any active category filter. Real browser history has no such problem.
+  function backToProducts(e: MouseEvent<HTMLAnchorElement>) {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      e.preventDefault();
+      router.back();
+    }
+  }
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const sizes = useMemo(
@@ -127,12 +140,7 @@ export function ProductDetailClient({ product }: { product: ProductDetailRespons
         {/* Floating Back to Products Navigation Arrow */}
         <Link
           href="/products"
-          onClick={(e) => {
-            if (typeof window !== 'undefined' && window.history.length > 1 && document.referrer.includes('/products')) {
-              e.preventDefault();
-              window.history.back();
-            }
-          }}
+          onClick={backToProducts}
           aria-label="Back to products"
           className="absolute left-4 sm:left-6 top-20 sm:top-24 z-30 inline-flex items-center gap-2 rounded-full bg-white/85 hover:bg-white text-[#10100F] backdrop-blur-md shadow-sm border border-black/5 px-3.5 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-all hover:shadow-md hover:-translate-x-0.5 active:scale-95 group"
         >
@@ -253,12 +261,7 @@ export function ProductDetailClient({ product }: { product: ProductDetailRespons
               </span>
               <Link
                 href="/products"
-                onClick={(e) => {
-                  if (typeof window !== 'undefined' && window.history.length > 1 && document.referrer.includes('/products')) {
-                    e.preventDefault();
-                    window.history.back();
-                  }
-                }}
+                onClick={backToProducts}
                 className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#10100F]/50 hover:text-[#10100F] transition-colors group"
               >
                 <span className="transition-transform group-hover:-translate-x-1">←</span>

@@ -8,14 +8,7 @@ interface SearchModalProps {
   onClose: () => void;
 }
 
-const trendingSearches = [
-  'Graphic Tee',
-  'Hoodie',
-  'Cargo Pants',
-  'Crewneck',
-  'Vintage Wash',
-  'Denim Jacket'
-];
+const trendingSearches = ['Hoodie', 'Vintage', 'Pant', 'Shirt', 'Tee', 'Casual'];
 
 export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const router = useRouter();

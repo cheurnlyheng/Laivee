@@ -64,6 +64,14 @@ export function Header() {
           {/* Brand Logo Pill */}
           <Link
             href="/"
+            onClick={(e) => {
+              // Clicking home while already on "/" is a no-op navigation for Next.js's router --
+              // nothing remounts, so the usual scroll-to-top on route change never fires. Do it by hand.
+              if (pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
             className="inline-flex items-center justify-center rounded-full bg-white/80 hover:bg-white backdrop-blur-md px-4 sm:px-5 py-2 sm:py-2.5 border border-black/5 shadow-sm transition-all active:scale-95"
           >
             <span className="text-xs sm:text-sm font-black tracking-tight text-[#10100F] uppercase">
