@@ -51,7 +51,7 @@ export default function AdminRestockPage() {
           </div>
           <p className="mt-2 text-sm text-[#10100F]/60 max-w-2xl">
             Variants at or below their restock threshold. An alert email also goes to{' '}
-            <span className="font-semibold text-[#10100F]/80">graphites.world@gmail.com</span> the first time each
+            <span className="font-semibold text-[#10100F]/80">laivee.org@gmail.com</span> the first time each
             one dips -- click through to add stock on the product's edit page.
           </p>
         </div>

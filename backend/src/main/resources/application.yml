@@ -54,7 +54,7 @@ app:
   # Where "you've got a new order" notifications go -- separate from warehouse.email above, which
   # is used for operational alerts (oversold items) and may be a different inbox entirely.
   store:
-    order-notification-email: ${ORDER_NOTIFICATION_EMAIL:graphites.world@gmail.com}
+    order-notification-email: ${ORDER_NOTIFICATION_EMAIL:laivee.org@gmail.com}
 
 stripe:
   secret-key: ${STRIPE_SECRET_KEY:}

@@ -1,0 +1,24 @@
+name: Deploy backend to Railway
+
+# Railway's own GitHub integration can't be linked to the account that hosts this project, so
+# this takes its place: any push that touches backend/ uploads the repo and builds the service.
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/deploy-backend.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: ghcr.io/railwayapp/cli:latest
+    env:
+      # A project token scoped to the production environment (Railway project -> Settings -> Tokens).
+      RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      # Uploads from the repo root on purpose -- the service's root directory is set to /backend
+      # on Railway, so it picks the backend out of the upload itself.
+      - run: railway up --ci --service=ecedd118-3da8-48a5-9c9e-6a0576dd94ff

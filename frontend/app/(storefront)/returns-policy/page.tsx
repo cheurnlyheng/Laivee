@@ -46,13 +46,13 @@ export default function ReturnsPolicyPage() {
         <p>
           If your order hasn&apos;t shipped yet, we may be able to cancel it and refund you in full —
           contact us as soon as possible at{' '}
-          <a href="mailto:graphites.world@gmail.com" className="underline">graphites.world@gmail.com</a>.
+          <a href="mailto:laivee.org@gmail.com" className="underline">laivee.org@gmail.com</a>.
         </p>
       </LegalSection>
 
       <LegalSection heading="Questions">
         <p>
-          Email us at <a href="mailto:graphites.world@gmail.com" className="underline">graphites.world@gmail.com</a> and we&apos;ll get back to you.
+          Email us at <a href="mailto:laivee.org@gmail.com" className="underline">laivee.org@gmail.com</a> and we&apos;ll get back to you.
         </p>
       </LegalSection>
     </LegalPageLayout>

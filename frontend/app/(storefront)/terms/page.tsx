@@ -45,7 +45,7 @@ export default function TermsOfSalePage() {
           We may cancel an order before it ships (for example, if an item turns out to be out of
           stock) and will always refund you in full and email you the reason. You can ask us to
           cancel an order that hasn&apos;t shipped yet by contacting{' '}
-          <a href="mailto:graphites.world@gmail.com" className="underline">graphites.world@gmail.com</a>.
+          <a href="mailto:laivee.org@gmail.com" className="underline">laivee.org@gmail.com</a>.
         </p>
       </LegalSection>
 
@@ -74,7 +74,7 @@ export default function TermsOfSalePage() {
         <p>
           <FillIn>Business Legal Name</FillIn><br />
           <FillIn>Business Address</FillIn><br />
-          <a href="mailto:graphites.world@gmail.com" className="underline">graphites.world@gmail.com</a>
+          <a href="mailto:laivee.org@gmail.com" className="underline">laivee.org@gmail.com</a>
         </p>
       </LegalSection>
     </LegalPageLayout>
