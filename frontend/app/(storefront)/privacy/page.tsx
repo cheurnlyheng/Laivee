@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { LegalPageLayout, LegalSection, FillIn } from '@/components/LegalPageLayout';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — GRAPHITES',
-  description: 'How GRAPHITES collects, uses, and protects your information.'
+  title: 'Privacy Policy — LAIVEE',
+  description: 'How LAIVEE collects, uses, and protects your information.'
 };
 
 export default function PrivacyPolicyPage() {

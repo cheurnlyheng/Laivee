@@ -69,7 +69,7 @@ export default function AdminLoginPage() {
       <div className="text-center mb-8">
         <Link href="/" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 hover:bg-white/10 transition-colors">
           <span className="font-heading text-lg font-black tracking-[0.2em] text-white">
-            GRAPHITES
+            LAIVEE
           </span>
           <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-white/50">
             Studio Operations

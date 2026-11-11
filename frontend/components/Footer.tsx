@@ -147,7 +147,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-4 lg:col-span-5 space-y-6">
             <Link href="/" className="inline-flex items-center gap-3 group">
               <span className="inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5 text-xs font-black tracking-[0.2em] text-[#10100F] uppercase shadow-sm group-hover:bg-neutral-200 transition-colors">
-                GRAPHITES
+                LAIVEE
               </span>
               <span className="text-xs font-bold uppercase tracking-wider text-white/60">
                 Vintage-Inspired Clothing
@@ -229,7 +229,7 @@ export function Footer() {
       <div className="border-t border-white/10 py-8 px-4 sm:px-8 lg:px-12 bg-[#0a0a09]">
         <div className="max-w-[1700px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-[11px] text-white/40">
-            <p>&copy; {new Date().getFullYear()} GRAPHITES. ALL RIGHTS RESERVED.</p>
+            <p>&copy; {new Date().getFullYear()} LAIVEE. ALL RIGHTS RESERVED.</p>
             <span className="hidden sm:inline text-white/20">•</span>
             <div className="flex items-center gap-4 text-[11px] font-medium text-white/50">
               <Link href="/terms" className="hover:text-white transition-colors">Terms of Sale</Link>
@@ -252,7 +252,7 @@ export function Footer() {
       {/* 5. Architectural Background Signature Watermark */}
       <div className="w-full flex justify-center items-center py-10 sm:py-14 md:py-16 overflow-hidden select-none pointer-events-none opacity-[0.035] px-4">
         <span className="font-heading font-black text-[8.5vw] sm:text-[9.5vw] md:text-[10.5vw] lg:text-[11vw] leading-none tracking-[0.16em] pl-[0.16em] text-white uppercase whitespace-nowrap text-center">
-          GRAPHITES
+          LAIVEE
         </span>
       </div>
     </footer>

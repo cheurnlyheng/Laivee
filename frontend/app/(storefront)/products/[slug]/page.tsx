@@ -10,9 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const product = await apiFetch<ProductDetailResponse>(`/api/products/${slug}`);
     const description = product.description
       ? product.description.slice(0, 160)
-      : `${product.name} -- $${product.price.toFixed(2)} at GRAPHITES.`;
+      : `${product.name} -- $${product.price.toFixed(2)} at LAIVEE.`;
     return {
-      title: `${product.name} — GRAPHITES`,
+      title: `${product.name} — LAIVEE`,
       description,
       openGraph: {
         title: product.name,
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       }
     };
   } catch {
-    return { title: 'Product — GRAPHITES' };
+    return { title: 'Product — LAIVEE' };
   }
 }
 

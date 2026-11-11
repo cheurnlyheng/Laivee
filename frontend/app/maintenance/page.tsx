@@ -10,7 +10,7 @@ export default async function MaintenancePage({
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center bg-paper px-6 text-center">
       <span className="font-heading text-xs font-bold uppercase tracking-[0.3em] text-ink/40">
-        Graphites
+        Laivee
       </span>
       <h1 className="mt-6 font-heading text-3xl font-semibold uppercase tracking-wide text-ink sm:text-4xl">
         Back shortly

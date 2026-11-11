@@ -189,7 +189,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="flex items-center justify-between">
           <Link href="/admin" className="flex items-center gap-3 group">
             <span className="inline-flex items-center justify-center rounded-full bg-white/15 group-hover:bg-white px-3.5 py-1.5 border border-white/15 transition-all text-xs font-black tracking-tight text-white group-hover:text-[#10100F] uppercase">
-              GRAPHITES
+              LAIVEE
             </span>
             <div>
               <span className="text-xs font-bold tracking-wider text-white uppercase block leading-none">

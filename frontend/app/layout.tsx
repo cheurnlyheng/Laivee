@@ -17,13 +17,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Graphites -- Vintage-Inspired Streetwear',
-    template: '%s | Graphites'
+    default: 'Laivee -- Vintage-Inspired Streetwear',
+    template: '%s | Laivee'
   },
   description:
-    'Graphites is a small boutique making vintage-inspired tees, hoodies, and pants. ' +
-    'Shop the Graphites collection, shipped from our studio to your door.',
-  keywords: ['Graphites', 'graphites clothing', 'graphite','graphites world','graphites shop', 'graphite world'],
+    'Laivee is a small boutique making vintage-inspired tees, hoodies, and pants. ' +
+    'Shop the Laivee collection, shipped from our studio to your door.',
+  keywords: ['Laivee', 'laivee clothing', 'laivee shop', 'laivee streetwear', 'laivee vintage'],
   alternates: {
     canonical: SITE_URL
   },
@@ -32,19 +32,19 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'Graphites',
-    title: 'Graphites -- Vintage-Inspired Streetwear',
+    siteName: 'Laivee',
+    title: 'Laivee -- Vintage-Inspired Streetwear',
     description: 'A small boutique making vintage-inspired tees, hoodies, and pants.',
     url: SITE_URL
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Graphites -- Vintage-Inspired Streetwear',
+    title: 'Laivee -- Vintage-Inspired Streetwear',
     description: 'A small boutique making vintage-inspired tees, hoodies, and pants.'
   }
 };
 
-// Organization + WebSite structured data -- tells Google this domain IS the "Graphites" brand
+// Organization + WebSite structured data -- tells Google this domain IS the "Laivee" brand
 // entity (helps brand-name searches surface this site, favicon, and a sitelinks search box)
 // rather than just another page that happens to mention the word. Static JSON we author
 // ourselves, not user input, so this is the standard safe use of dangerouslySetInnerHTML for
@@ -54,13 +54,13 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      name: 'Graphites',
+      name: 'Laivee',
       url: SITE_URL,
       logo: `${SITE_URL}/icon.svg`
     },
     {
       '@type': 'WebSite',
-      name: 'Graphites',
+      name: 'Laivee',
       url: SITE_URL,
       potentialAction: {
         '@type': 'SearchAction',

@@ -30,11 +30,11 @@ export function ProductFilterBar({ totalItems, currentSearch = '', categories = 
           {activeQuery
             ? `Results for "${activeQuery}"`
             : activeCategory
-              ? `${activeCategory.name} from GRAPHITES`
-              : 'New Arrivals from GRAPHITES'}
+              ? `${activeCategory.name} from LAIVEE`
+              : 'New Arrivals from LAIVEE'}
         </h1>
         <p className="text-[13px] text-[#767676] mt-1 font-normal">
-          Explore the latest from GRAPHITES. The collection offers a wide range of different styles.
+          Explore the latest from LAIVEE. The collection offers a wide range of different styles.
         </p>
       </div>
 

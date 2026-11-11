@@ -261,7 +261,7 @@ export function OrderConfirmationClient() {
                 Purchased items ({order.items.length})
               </span>
               <span className="text-[11px] text-[#10100F]/40">
-                Fulfilled by GRAPHITES
+                Fulfilled by LAIVEE
               </span>
             </div>
 
@@ -284,7 +284,7 @@ export function OrderConfirmationClient() {
                           />
                         ) : (
                           <div className="h-full w-full flex items-center justify-center text-[10px] text-black/30 tracking-widest">
-                            GRAPHITES
+                            LAIVEE
                           </div>
                         )}
                       </div>

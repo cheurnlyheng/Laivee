@@ -75,7 +75,7 @@ export function Header() {
             className="inline-flex items-center justify-center rounded-full bg-white/80 hover:bg-white backdrop-blur-md px-4 sm:px-5 py-2 sm:py-2.5 border border-black/5 shadow-sm transition-all active:scale-95"
           >
             <span className="text-xs sm:text-sm font-black tracking-tight text-[#10100F] uppercase">
-              GRAPHITES
+              LAIVEE
             </span>
           </Link>
 

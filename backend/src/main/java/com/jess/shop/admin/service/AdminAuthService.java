@@ -45,7 +45,7 @@ public class AdminAuthService {
     private static final String PENDING_2FA_ROLE = "PENDING_2FA";
     private static final long PENDING_2FA_EXPIRATION_MINUTES = 5;
 
-    private static final String TOTP_ISSUER = "Graphites";
+    private static final String TOTP_ISSUER = "Laivee";
 
     private final AdminUserRepository adminUserRepository;
     private final PasswordEncoder passwordEncoder;

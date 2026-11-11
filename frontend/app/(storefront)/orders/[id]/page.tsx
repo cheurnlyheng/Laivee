@@ -493,7 +493,7 @@ export default function OrderDetailPage() {
                           />
                         ) : (
                           <div className="h-full w-full flex items-center justify-center text-[10px] text-black/30 tracking-widest">
-                            GRAPHITES
+                            LAIVEE
                           </div>
                         )}
                       </div>

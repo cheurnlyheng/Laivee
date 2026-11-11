@@ -1,4 +1,4 @@
-# Deploying GRAPHITES
+# Deploying LAIVEE
 
 Backend (Spring Boot + Postgres) on **Railway**, frontend (Next.js) on **Vercel**. Neither needs a
 Dockerfile — Railway's Nixpacks builder detects the Maven project automatically (`mvn package`,

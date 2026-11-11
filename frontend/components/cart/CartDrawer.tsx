@@ -155,7 +155,7 @@ export function CartDrawer() {
                             />
                           ) : (
                             <div className="h-full w-full flex items-center justify-center text-[10px] text-black/30 font-mono">
-                              GRAPHITES
+                              LAIVEE
                             </div>
                           )}
                         </div>

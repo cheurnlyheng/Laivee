@@ -16,7 +16,7 @@ export function downloadReceiptPdf(order: OrderResponse) {
 
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(18);
-  doc.text('GRAPHITES', marginX, y);
+  doc.text('LAIVEE', marginX, y);
   doc.setFontSize(10);
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(120);
@@ -90,5 +90,5 @@ export function downloadReceiptPdf(order: OrderResponse) {
   y += 4;
   totalsRow('Total', `$${order.total.toFixed(2)} ${order.currency || 'USD'}`, true);
 
-  doc.save(`graphites-receipt-${order.id.slice(0, 8)}.pdf`);
+  doc.save(`laivee-receipt-${order.id.slice(0, 8)}.pdf`);
 }

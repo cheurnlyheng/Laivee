@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { LegalPageLayout, LegalSection, FillIn } from '@/components/LegalPageLayout';
 
 export const metadata: Metadata = {
-  title: 'Terms of Sale — GRAPHITES',
-  description: 'The terms that apply when you buy from GRAPHITES.'
+  title: 'Terms of Sale — LAIVEE',
+  description: 'The terms that apply when you buy from LAIVEE.'
 };
 
 export default function TermsOfSalePage() {

@@ -43,7 +43,7 @@ app:
   frontend-base-url: ${FRONTEND_BASE_URL:http://localhost:3000}
   upload-dir: ${UPLOAD_DIR:uploads}   # admin-uploaded images; relative to where the backend is started
   warehouse:
-    name: ${WAREHOUSE_NAME:GRAPHITES}
+    name: ${WAREHOUSE_NAME:LAIVEE}
     street1: ${WAREHOUSE_STREET1:}
     city: ${WAREHOUSE_CITY:}
     state: ${WAREHOUSE_STATE:}

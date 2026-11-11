@@ -76,7 +76,7 @@ export function CategoryMegaMenu({ isOpen, onClose, featured = [] }: CategoryMeg
             onClick={onClose}
             className="text-base sm:text-lg font-black tracking-tight text-white uppercase hover:opacity-70 transition-opacity"
           >
-            GRAPHITES
+            LAIVEE
           </Link>
 
           {/* Top navigation featured-items row */}

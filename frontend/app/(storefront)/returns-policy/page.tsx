@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { LegalPageLayout, LegalSection, FillIn } from '@/components/LegalPageLayout';
 
 export const metadata: Metadata = {
-  title: 'Shipping & Returns — GRAPHITES',
+  title: 'Shipping & Returns — LAIVEE',
   description: 'Our shipping timelines and how to request a return or refund.'
 };
 
