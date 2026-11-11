@@ -33,6 +33,16 @@ const nextConfig = {
   images: {
     remotePatterns: [{ protocol: 'https', hostname: '**' }, { protocol: 'http', hostname: '**' }]
   },
+  // The shop used to live on graphites.world. Anything still arriving there (old search results,
+  // links in emails already sent) lands on the same page under the new domain.
+  async redirects() {
+    return ['www.graphites.world', 'graphites.world'].map((host) => ({
+      source: '/:path*',
+      has: [{ type: 'host', value: host }],
+      destination: 'https://www.laivee.com/:path*',
+      permanent: true
+    }));
+  },
   async headers() {
     return [
       {
