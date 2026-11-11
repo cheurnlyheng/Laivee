@@ -19,6 +19,8 @@ import com.jess.shop.shipping.dto.CheckoutShippingDtos.ShippingAddressRequest;
 import com.jess.shop.shipping.dto.ShippoDtos.*;
 import com.jess.shop.shipping.entity.Shipment;
 import com.jess.shop.shipping.repository.ShipmentRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +35,8 @@ import java.util.UUID;
 
 @Service
 public class ShipmentService {
+
+    private static final Logger log = LoggerFactory.getLogger(ShipmentService.class);
 
     private final ShippoService shippoService;
     private final OrderRepository orderRepository;
@@ -92,7 +96,27 @@ public class ShipmentService {
     public ShippingRatesResponse getRatesForAddress(List<CartItemResponse> cartItems, ShippingAddressRequest shipTo) {
         AddressPayload to = new AddressPayload(shipTo.fullName(), shipTo.line1(), shipTo.line2(), shipTo.city(),
             shipTo.state(), shipTo.postalCode(), shipTo.country(), shipTo.phone(), shipTo.email());
+        requireDeliverableAddress(to);
         return quoteRates(warehouseAddress(), to, estimateParcelForCart(cartItems));
+    }
+
+    /** Shippo will happily quote rates for an address that doesn't exist (a real ZIP is enough), so
+     * without this the customer only found out after paying, when the label purchase failed. Runs
+     * on every quote, which also covers the re-quote in verifySelectedRate right before the Stripe
+     * session is created. If the validation call itself fails, the address is let through -- the
+     * post-payment check in OrderService still flags it for the admin. */
+    private void requireDeliverableAddress(AddressPayload to) {
+        AddressValidationResponse response;
+        try {
+            response = shippoService.validateAddress(to);
+        } catch (Exception e) {
+            log.warn("Could not validate checkout address against Shippo -- letting it through", e);
+            return;
+        }
+        if (response != null && response.validationResults() != null && !response.validationResults().isValid()) {
+            throw new IllegalStateException(
+                "We couldn't find that address. Please check the street, city, state and ZIP code and try again.");
+        }
     }
 
     /** Reversed-direction quote for a RETURN label: FROM the customer's saved shipping address, TO
